@@ -19,6 +19,7 @@ document.body.appendChild(getSumBtn);
     totalRow = document.createElement("tr");
     totalRow.className = 'total';
     const totalCell = document.createElement("td");
+	  totalCell.id = 'ans';
     totalCell.setAttribute("colspan", "2");
     totalRow.appendChild(totalCell);
     table.appendChild(totalRow);
@@ -27,5 +28,11 @@ document.body.appendChild(getSumBtn);
                               Rs${totalPrice.toFixed(2)}`;
 };
 	
-getSumBtn.addEventListener("click", getSum);
+  getSumBtn.addEventListener("click", getSum);
+
+
+
+
+
+
 	
