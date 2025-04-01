@@ -12,14 +12,19 @@ document.body.appendChild(getSumBtn);
     }
   });
 
+ 
   const table = document.querySelector("table");
-  const totalRow = document.createElement("tr");
-  const totalCell = document.createElement("td");
-  totalCell.setAttribute("colspan", "2");
-  totalCell.textContent = `Total Price: Rs${totalPrice.toFixed(2)}`;
-  totalRow.appendChild(totalCell);
-  table.appendChild(totalRow);
-		
+  let totalRow = table.querySelector(".total");
+  if (!totalRow) {
+    totalRow = document.createElement("tr");
+    totalRow.className = 'total';
+    const totalCell = document.createElement("td");
+    totalCell.setAttribute("colspan", "2");
+    totalRow.appendChild(totalCell);
+    table.appendChild(totalRow);
+  }
+  totalRow.querySelector('td').textContent = `Total Price: 
+                              Rs${totalPrice.toFixed(2)}`;
 };
 	
 getSumBtn.addEventListener("click", getSum);
